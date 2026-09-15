@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Booking</title>
+</head>
+
+<body>
+
+    <h1>Hospital / Clinic Appointment Booking</h1>
+
+    <p>
+        Use this form to request an appointment with one of our doctors.
+        Please provide accurate contact information and select your
+        preferred appointment details.
+    </p>
+
+    <hr>
+
+    <form action="#" method="post">
+
+        <h2>Patient Information</h2>
+
+        <p>
+            <label for="patientName">Patient Name:</label><br>
+            <input type="text"
+                   id="patientName"
+                   name="patient_name"
+                   placeholder="Enter patient name"
+                   minlength="3"
+                   maxlength="60"
+                   required>
+        </p>
+
+        <p>
+            <label for="patientEmail">Email:</label><br>
+            <input type="email"
+                   id="patientEmail"
+                   name="patient_email"
+                   placeholder="patient@example.com"
+                   required>
+        </p>
+
+        <p>
+            <label for="patientMobile">Mobile Number:</label><br>
+            <input type="tel"
+                   id="patientMobile"
+                   name="patient_mobile"
+                   placeholder="10-digit mobile number"
+                   pattern="[0-9]{10}"
+                   minlength="10"
+                   maxlength="10"
+                   required>
+        </p>
+
+        <p>
+            <label for="patientDOB">Date of Birth:</label><br>
+            <input type="date"
+                   id="patientDOB"
+                   name="patient_date_of_birth"
+                   min="1900-01-01"
+                   max="2026-12-31"
+                   required>
+        </p>
+
+        <p>
+            <label for="patientID">Patient ID (Optional):</label><br>
+            <input type="text"
+                   id="patientID"
+                   name="patient_id"
+                   placeholder="Enter patient ID"
+                   minlength="4"
+                   maxlength="20">
+        </p>
+
+        <h2>Appointment Details</h2>
+
+        <p>
+            <label for="appointmentDate">Appointment Date:</label><br>
+            <input type="date"
+                   id="appointmentDate"
+                   name="appointment_date"
+                   min="2026-01-01"
+                   max="2026-12-31"
+                   required>
+        </p>
+
+        <p>
+            <label for="appointmentTime">Appointment Time:</label><br>
+            <input type="time"
+                   id="appointmentTime"
+                   name="appointment_time"
+                   min="09:00"
+                   max="18:00"
+                   required>
+        </p>
+
+        <p>
+            <label for="doctor">Select Doctor:</label><br>
+            <select id="doctor" name="doctor" required>
+                <option value="">-- Select Doctor --</option>
+                <option value="dr_arun">Dr. Arun Sharma - General Physician</option>
+                <option value="dr_priya">Dr. Priya Mehta - Cardiologist</option>
+                <option value="dr_rahul">Dr. Rahul Verma - Dermatologist</option>
+                <option value="dr_neha">Dr. Neha Kapoor - Pediatrician</option>
+                <option value="dr_vikram">Dr. Vikram Singh - Orthopedic Specialist</option>
+                <option value="dr_anjali">Dr. Anjali Rao - Gynecologist</option>
+            </select>
+        </p>
+
+        <fieldset>
+            <legend>Visit Type</legend>
+
+            <input type="radio"
+                   id="newPatient"
+                   name="visit_type"
+                   value="new_patient"
+                   required>
+            <label for="newPatient">New Patient</label><br>
+
+            <input type="radio"
+                   id="followUp"
+                   name="visit_type"
+                   value="follow_up">
+            <label for="followUp">Follow-up</label><br>
+
+            <input type="radio"
+                   id="consultation"
+                   name="visit_type"
+                   value="consultation">
+            <label for="consultation">Consultation</label><br>
+
+            <input type="radio"
+                   id="emergency"
+                   name="visit_type"
+                   value="emergency">
+            <label for="emergency">Emergency</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Preferred Communication Method</legend>
+
+            <input type="radio"
+                   id="communicationEmail"
+                   name="communication"
+                   value="email"
+                   required>
+            <label for="communicationEmail">Email</label><br>
+
+            <input type="radio"
+                   id="communicationPhone"
+                   name="communication"
+                   value="phone">
+            <label for="communicationPhone">Phone Call</label><br>
+
+            <input type="radio"
+                   id="communicationSms"
+                   name="communication"
+                   value="sms">
+            <label for="communicationSms">SMS</label>
+        </fieldset>
+
+        <br>
+
+        <p>
+            <label for="reason">Reason for Visit / Additional Information:</label><br>
+            <textarea id="reason"
+                      name="reason"
+                      rows="6"
+                      cols="60"
+                      placeholder="Describe the reason for your visit..."
+                      maxlength="500"></textarea>
+        </p>
+
+        <p>
+            <input type="checkbox"
+                   id="terms"
+                   name="appointment_terms"
+                   value="accepted"
+                   required>
+
+            <label for="terms">
+                I accept the appointment terms and understand that
+                the appointment is subject to clinic confirmation.
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="Book Appointment">
+            <input type="reset" value="Reset Form">
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Clinic Timings</h2>
+
+    <table border="1" cellpadding="8">
+        <caption>Weekly Clinic Timings</caption>
+
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Morning</th>
+                <th>Evening</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>9:00 AM - 1:00 PM</td>
+                <td>4:00 PM - 6:00 PM</td>
+            </tr>
+
+            <tr>
+                <td>Tuesday</td>
+                <td>9:00 AM - 1:00 PM</td>
+                <td>4:00 PM - 6:00 PM</td>
+            </tr>
+
+            <tr>
+                <td>Wednesday</td>
+                <td>9:00 AM - 1:00 PM</td>
+                <td>4:00 PM - 6:00 PM</td>
+            </tr>
+
+            <tr>
+                <td>Thursday</td>
+                <td>9:00 AM - 1:00 PM</td>
+                <td>4:00 PM - 6:00 PM</td>
+            </tr>
+
+            <tr>
+                <td>Friday</td>
+                <td>9:00 AM - 1:00 PM</td>
+                <td>4:00 PM - 6:00 PM</td>
+            </tr>
+
+            <tr>
+                <td>Saturday</td>
+                <td>9:00 AM - 12:00 PM</td>
+                <td>Closed</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="tel:+911234567890">Contact Clinic / Emergency: +91 12345 67890</a>
+    </p>
+
+</body>
+</html>

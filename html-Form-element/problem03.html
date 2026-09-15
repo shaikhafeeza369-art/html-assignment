@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Course Enrollment</title>
+</head>
+
+<body>
+
+    <h1>Online Course Enrollment & Student Registration</h1>
+
+    <p>
+        Welcome to our online learning platform. Complete the registration
+        form below to enroll in a technical course and provide information
+        about your learning preferences and background.
+    </p>
+
+    <hr>
+
+    <form action="#" method="post">
+
+        <h2>Account Information</h2>
+
+        <p>
+            <label for="studentName">Student Name:</label><br>
+            <input type="text"
+                   id="studentName"
+                   name="student_name"
+                   placeholder="Enter your full name"
+                   minlength="3"
+                   maxlength="60"
+                   required>
+        </p>
+
+        <p>
+            <label for="studentEmail">Email:</label><br>
+            <input type="email"
+                   id="studentEmail"
+                   name="student_email"
+                   placeholder="student@example.com"
+                   required>
+        </p>
+
+        <p>
+            <label for="password">Password:</label><br>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Create a password"
+                   minlength="8"
+                   maxlength="30"
+                   required>
+        </p>
+
+        <p>
+            <label for="mobile">Mobile Number:</label><br>
+            <input type="tel"
+                   id="mobile"
+                   name="mobile"
+                   placeholder="10-digit mobile number"
+                   pattern="[0-9]{10}"
+                   minlength="10"
+                   maxlength="10"
+                   required>
+        </p>
+
+        <p>
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date"
+                   id="dob"
+                   name="date_of_birth"
+                   min="1950-01-01"
+                   max="2010-12-31"
+                   required>
+        </p>
+
+        <h2>Course Information</h2>
+
+        <p>
+            <label for="course">Select Course:</label><br>
+            <select id="course" name="course" required>
+                <option value="">-- Select Course --</option>
+                <option value="python">Python Programming</option>
+                <option value="java">Java Programming</option>
+                <option value="web">Web Development</option>
+                <option value="database">Database Management</option>
+                <option value="data_science">Data Science</option>
+                <option value="ai">Artificial Intelligence</option>
+                <option value="cyber_security">Cyber Security</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="batch">Select Batch / Session:</label><br>
+            <select id="batch" name="batch" required>
+                <option value="">-- Select Batch --</option>
+                <option value="morning">Morning - 9:00 AM</option>
+                <option value="afternoon">Afternoon - 2:00 PM</option>
+                <option value="evening">Evening - 6:00 PM</option>
+                <option value="weekend">Weekend Batch</option>
+            </select>
+        </p>
+
+        <fieldset>
+            <legend>Learning Mode</legend>
+
+            <input type="radio"
+                   id="online"
+                   name="learning_mode"
+                   value="online"
+                   required>
+            <label for="online">Online</label><br>
+
+            <input type="radio"
+                   id="offline"
+                   name="learning_mode"
+                   value="offline">
+            <label for="offline">Offline</label><br>
+
+            <input type="radio"
+                   id="hybrid"
+                   name="learning_mode"
+                   value="hybrid">
+            <label for="hybrid">Hybrid</label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Areas of Interest</legend>
+
+            <input type="checkbox"
+                   id="java"
+                   name="interest"
+                   value="java">
+            <label for="java">Java</label><br>
+
+            <input type="checkbox"
+                   id="python"
+                   name="interest"
+                   value="python">
+            <label for="python">Python</label><br>
+
+            <input type="checkbox"
+                   id="webDevelopment"
+                   name="interest"
+                   value="web_development">
+            <label for="webDevelopment">Web Development</label><br>
+
+            <input type="checkbox"
+                   id="dataStructures"
+                   name="interest"
+                   value="data_structures">
+            <label for="dataStructures">Data Structures</label><br>
+
+            <input type="checkbox"
+                   id="database"
+                   name="interest"
+                   value="database">
+            <label for="database">Database</label>
+        </fieldset>
+
+        <h2>Educational Background</h2>
+
+        <p>
+            <label for="education">Education Level:</label><br>
+            <select id="education" name="education_level" required>
+                <option value="">-- Select Education Level --</option>
+                <option value="school">School</option>
+                <option value="12th">12th / Senior Secondary</option>
+                <option value="diploma">Diploma</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="graduate">Graduate</option>
+                <option value="postgraduate">Postgraduate</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="college">College / Institution:</label><br>
+            <input type="text"
+                   id="college"
+                   name="college"
+                   placeholder="Enter institution name"
+                   minlength="2"
+                   maxlength="100"
+                   required>
+        </p>
+
+        <p>
+            <label for="semester">Current Semester / Year:</label><br>
+            <input type="text"
+                   id="semester"
+                   name="current_semester"
+                   placeholder="Example: 3rd Semester"
+                   maxlength="30">
+        </p>
+
+        <p>
+            <label for="experience">Programming Experience (Years):</label><br>
+            <input type="number"
+                   id="experience"
+                   name="programming_experience"
+                   min="0"
+                   max="20"
+                   step="0.5"
+                   value="0">
+        </p>
+
+        <p>
+            <label for="portfolio">GitHub / Portfolio URL:</label><br>
+            <input type="url"
+                   id="portfolio"
+                   name="portfolio"
+                   placeholder="https://github.com/username">
+        </p>
+
+        <p>
+            <label for="goals">Learning Goals:</label><br>
+            <textarea id="goals"
+                      name="learning_goals"
+                      rows="6"
+                      cols="60"
+                      placeholder="Describe what you want to learn..."
+                      minlength="10"
+                      maxlength="500"
+                      required></textarea>
+        </p>
+
+        <h2>Confirmation</h2>
+
+        <p>
+            <input type="checkbox"
+                   id="confirmation"
+                   name="confirmation"
+                   value="confirmed"
+                   required>
+
+            <label for="confirmation">
+                I confirm that the information provided above is correct
+                and I agree to enroll in the selected course.
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="Enroll Now">
+            <input type="reset" value="Reset Form">
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Learn More</h2>
+
+    <p>
+        Visit our
+        <a href="https://www.example.com" target="_blank">
+            Course Information Page
+        </a>
+        to learn more about available courses.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+         alt="Students learning online"
+         width="500">
+
+</body>
+</html>

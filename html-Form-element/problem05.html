@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Checkout</title>
+</head>
+
+<body>
+
+    <h1>E-Commerce Checkout & Delivery</h1>
+
+    <p>
+        Welcome to the checkout page. Review your selected products,
+        provide your delivery and payment information, and confirm
+        your order before placing it.
+    </p>
+
+    <hr>
+
+    <h2>Selected Products</h2>
+
+    <table border="1" cellpadding="10">
+        <caption>Order Summary</caption>
+
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Wireless Headphones</td>
+                <td>
+                    <input type="number"
+                           name="headphones_quantity"
+                           value="1"
+                           min="1"
+                           max="10"
+                           step="1">
+                </td>
+                <td>₹2,499</td>
+                <td>₹2,499</td>
+            </tr>
+
+            <tr>
+                <td>USB-C Charger</td>
+                <td>
+                    <input type="number"
+                           name="charger_quantity"
+                           value="1"
+                           min="1"
+                           max="10"
+                           step="1">
+                </td>
+                <td>₹999</td>
+                <td>₹999</td>
+            </tr>
+
+            <tr>
+                <td>Wireless Mouse</td>
+                <td>
+                    <input type="number"
+                           name="mouse_quantity"
+                           value="1"
+                           min="1"
+                           max="10"
+                           step="1">
+                </td>
+                <td>₹799</td>
+                <td>₹799</td>
+            </tr>
+
+            <tr>
+                <th colspan="3">Grand Total</th>
+                <th>₹4,297</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <form action="#" method="post">
+
+        <h2>Customer Information</h2>
+
+        <p>
+            <label for="customerName">Customer Name:</label><br>
+            <input type="text"
+                   id="customerName"
+                   name="customer_name"
+                   placeholder="Enter your full name"
+                   minlength="3"
+                   maxlength="60"
+                   autocomplete="name"
+                   required>
+        </p>
+
+        <p>
+            <label for="customerEmail">Email Address:</label><br>
+            <input type="email"
+                   id="customerEmail"
+                   name="customer_email"
+                   placeholder="example@email.com"
+                   autocomplete="email"
+                   required>
+        </p>
+
+        <p>
+            <label for="customerMobile">Mobile Number:</label><br>
+            <input type="tel"
+                   id="customerMobile"
+                   name="customer_mobile"
+                   placeholder="10-digit mobile number"
+                   pattern="[0-9]{10}"
+                   minlength="10"
+                   maxlength="10"
+                   autocomplete="tel"
+                   required>
+        </p>
+
+        <h2>Delivery Address</h2>
+
+        <p>
+            <label for="house">House / Street:</label><br>
+            <input type="text"
+                   id="house"
+                   name="house_street"
+                   placeholder="House number and street"
+                   minlength="5"
+                   maxlength="150"
+                   autocomplete="street-address"
+                   required>
+        </p>
+
+        <p>
+            <label for="city">City:</label><br>
+            <input type="text"
+                   id="city"
+                   name="city"
+                   placeholder="Enter city"
+                   minlength="2"
+                   maxlength="50"
+                   autocomplete="address-level2"
+                   required>
+        </p>
+
+        <p>
+            <label for="state">State:</label><br>
+            <select id="state"
+                    name="state"
+                    required
+                    autocomplete="address-level1">
+
+                <option value="">-- Select State --</option>
+                <option value="delhi">Delhi</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="uttarpradesh">Uttar Pradesh</option>
+                <option value="westbengal">West Bengal</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="postalCode">Postal Code:</label><br>
+            <input type="text"
+                   id="postalCode"
+                   name="postal_code"
+                   placeholder="6-digit postal code"
+                   pattern="[0-9]{6}"
+                   minlength="6"
+                   maxlength="6"
+                   autocomplete="postal-code"
+                   required>
+        </p>
+
+        <p>
+            <label for="country">Country:</label><br>
+            <select id="country"
+                    name="country"
+                    required
+                    autocomplete="country">
+
+                <option value="">-- Select Country --</option>
+                <option value="india">India</option>
+                <option value="usa">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value="germany">Germany</option>
+                <option value="japan">Japan</option>
+            </select>
+        </p>
+
+        <h2>Delivery Options</h2>
+
+        <fieldset>
+            <legend>Select Delivery Method</legend>
+
+            <input type="radio"
+                   id="standard"
+                   name="delivery_method"
+                   value="standard"
+                   required>
+            <label for="standard">
+                Standard Delivery - 5 to 7 Days
+            </label><br>
+
+            <input type="radio"
+                   id="express"
+                   name="delivery_method"
+                   value="express">
+            <label for="express">
+                Express Delivery - 2 to 3 Days
+            </label><br>
+
+            <input type="radio"
+                   id="sameDay"
+                   name="delivery_method"
+                   value="same_day">
+            <label for="sameDay">
+                Same Day Delivery
+            </label>
+        </fieldset>
+
+        <h2>Payment Method</h2>
+
+        <fieldset>
+            <legend>Select Payment Method</legend>
+
+            <input type="radio"
+                   id="card"
+                   name="payment_method"
+                   value="card"
+                   required>
+            <label for="card">Card</label><br>
+
+            <input type="radio"
+                   id="cod"
+                   name="payment_method"
+                   value="cash_on_delivery">
+            <label for="cod">Cash on Delivery</label><br>
+
+            <input type="radio"
+                   id="upi"
+                   name="payment_method"
+                   value="upi">
+            <label for="upi">UPI / Online Payment</label>
+        </fieldset>
+
+        <h2>Card Payment Information</h2>
+
+        <p>
+            <label for="cardHolder">Card Holder Name:</label><br>
+            <input type="text"
+                   id="cardHolder"
+                   name="card_holder_name"
+                   placeholder="Name as printed on card"
+                   minlength="3"
+                   maxlength="60"
+                   autocomplete="cc-name">
+        </p>
+
+        <p>
+            <label for="cardNumber">Card Number:</label><br>
+            <input type="text"
+                   id="cardNumber"
+                   name="card_number"
+                   placeholder="16-digit card number"
+                   pattern="[0-9]{16}"
+                   minlength="16"
+                   maxlength="16"
+                   autocomplete="cc-number">
+        </p>
+
+        <p>
+            <label for="expiry">Card Expiry Date:</label><br>
+            <input type="month"
+                   id="expiry"
+                   name="card_expiry"
+                   autocomplete="cc-exp">
+        </p>
+
+        <p>
+            <label for="securityCode">Security Code:</label><br>
+            <input type="password"
+                   id="securityCode"
+                   name="security_code"
+                   placeholder="CVV"
+                   pattern="[0-9]{3,4}"
+                   minlength="3"
+                   maxlength="4"
+                   autocomplete="cc-csc">
+        </p>
+
+        <h2>Billing Address</h2>
+
+        <p>
+            <input type="checkbox"
+                   id="sameBilling"
+                   name="same_billing_address"
+                   value="yes">
+
+            <label for="sameBilling">
+                Billing address is the same as delivery address.
+            </label>
+        </p>
+
+        <h2>Delivery Instructions</h2>
+
+        <p>
+            <label for="instructions">Special Delivery Instructions:</label><br>
+            <textarea id="instructions"
+                      name="delivery_instructions"
+                      rows="5"
+                      cols="60"
+                      placeholder="Example: Please leave the package with the security guard."
+                      maxlength="300"></textarea>
+        </p>
+
+        <h2>Coupon / Promo Code</h2>
+
+        <p>
+            <label for="coupon">Coupon / Promo Code (Optional):</label><br>
+            <input type="text"
+                   id="coupon"
+                   name="coupon_code"
+                   placeholder="Enter promo code"
+                   maxlength="20">
+        </p>
+
+        <h2>Order Confirmation</h2>
+
+        <p>
+            <input type="checkbox"
+                   id="terms"
+                   name="terms_conditions"
+                   value="accepted"
+                   required>
+
+            <label for="terms">
+                I agree to the Terms and Conditions of the store.
+            </label>
+        </p>
+
+        <p>
+            <input type="checkbox"
+                   id="orderConfirmation"
+                   name="order_confirmation"
+                   value="confirmed"
+                   required>
+
+            <label for="orderConfirmation">
+                I confirm that my order details and delivery information
+                are correct.
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="Place Order">
+            <input type="reset" value="Reset Form">
+        </p>
+
+    </form>
+
+    <hr>
+
+    <h2>Continue Shopping</h2>
+
+    <p>
+        <a href="https://www.example.com">
+            Continue Shopping
+        </a>
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
+         alt="Online shopping products"
+         width="500">
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Online Store</p>
+    </footer>
+
+</body>
+</html>
